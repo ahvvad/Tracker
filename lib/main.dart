@@ -12,8 +12,10 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Tracker',
       debugShowCheckedModeBanner: false,
-      home: Center(
-        child: Text('Hello Flutter!'),
+      home: Scaffold(
+        body: Center(
+          child: Text('Hello Flutter!'),
+        ),
       ),
     );
   }
