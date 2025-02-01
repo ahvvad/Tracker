@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -67,7 +66,10 @@ class CustomAppBar extends StatelessWidget {
             ),
             child: IconButton(
               onPressed: () {},
-              icon: const Icon(CupertinoIcons.settings),
+              icon: const Icon(
+                CupertinoIcons.settings,
+                color: Color(0xFF24323F),
+              ),
             ),
           ),
         ),

@@ -16,7 +16,7 @@ class TransactionsBar extends StatelessWidget {
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            color: Color(0xFF263A4D),
+            color: Color(0xFFA5B0C8),
           ),
         ),
         GestureDetector(
