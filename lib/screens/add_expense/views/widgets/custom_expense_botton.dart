@@ -1,10 +1,9 @@
-
 import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class customExpenseBotton extends StatelessWidget {
-  const customExpenseBotton({
+class CustomExpenseBotton extends StatelessWidget {
+  const CustomExpenseBotton({
     super.key,
   });
 

@@ -103,21 +103,7 @@ class _AddExpenseState extends State<AddExpense> {
                           color: const Color(0xFF263A4D).withOpacity(0.5),
                           size: 16,
                         ),
-                        suffixIcon: IconButton(
-                          onPressed: () {
-                            showDialog(
-                              context: context,
-                              builder: (ctx) {
-                                return const customAlertDialog();
-                              },
-                            );
-                          },
-                          icon: const Icon(
-                            FontAwesomeIcons.plus,
-                            size: 16,
-                          ),
-                          color: const Color(0xFF263A4D).withOpacity(0.5),
-                        ),
+                        suffixIcon: const CustomAlertDialog(),
                         hintText: 'Category',
                         hintStyle: TextStyle(
                           color: const Color(0xFF263A4D).withOpacity(0.5),
@@ -182,7 +168,7 @@ class _AddExpenseState extends State<AddExpense> {
                 ),
                 const Spacer(),
                 const SizedBox(height: 16),
-                const customExpenseBotton(),
+                const CustomExpenseBotton()
               ],
             ),
           ),
