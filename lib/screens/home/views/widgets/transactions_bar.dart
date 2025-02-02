@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class TransactionsBar extends StatelessWidget {
@@ -16,7 +15,7 @@ class TransactionsBar extends StatelessWidget {
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            color: Color(0xFFA5B0C8),
+            color: Color(0xFF263A4D),
           ),
         ),
         GestureDetector(

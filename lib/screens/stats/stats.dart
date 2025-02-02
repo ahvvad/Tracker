@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:money_tracker/screens/stats/widgets/chart.dart';
 import 'package:money_tracker/screens/stats/widgets/chart_view.dart';
 import 'package:money_tracker/screens/stats/widgets/custom_stats_app_bar.dart';
 
