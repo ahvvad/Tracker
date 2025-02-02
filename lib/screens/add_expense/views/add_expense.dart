@@ -104,7 +104,20 @@ class _AddExpenseState extends State<AddExpense> {
                           size: 16,
                         ),
                         suffixIcon: IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            showDialog(
+                              context: context,
+                              builder: (ctx) {
+                                return AlertDialog(
+                                  content: Column(
+                                    children: [
+                                      
+                                    ],
+                                  ),
+                                );
+                              },
+                            );
+                          },
                           icon: const Icon(
                             FontAwesomeIcons.plus,
                             size: 16,
