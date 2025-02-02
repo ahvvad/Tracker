@@ -109,9 +109,86 @@ class _AddExpenseState extends State<AddExpense> {
                               context: context,
                               builder: (ctx) {
                                 return AlertDialog(
+                                  title: const Text(
+                                    'Create a Gategory',
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  backgroundColor: Colors.grey.shade500,
                                   content: Column(
+                                    mainAxisSize: MainAxisSize.min,
                                     children: [
-                                      
+                                      const SizedBox(height: 20),
+                                      TextFormField(
+                                        textAlignVertical:
+                                            TextAlignVertical.center,
+                                        decoration: InputDecoration(
+                                          hintText: 'Name',
+                                          hintStyle: TextStyle(
+                                            color: const Color(0xFF263A4D)
+                                                .withOpacity(0.5),
+                                          ),
+                                          fillColor: Colors.white,
+                                          filled: true,
+                                          border: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(12),
+                                            borderSide: BorderSide.none,
+                                          ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(12),
+                                            borderSide: BorderSide.none,
+                                          ),
+                                        ),
+                                      ),
+                                      const SizedBox(height: 20),
+                                      TextFormField(
+                                        textAlignVertical:
+                                            TextAlignVertical.center,
+                                        decoration: InputDecoration(
+                                          hintText: 'Icon',
+                                          hintStyle: TextStyle(
+                                            color: const Color(0xFF263A4D)
+                                                .withOpacity(0.5),
+                                          ),
+                                          fillColor: Colors.white,
+                                          filled: true,
+                                          border: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(12),
+                                            borderSide: BorderSide.none,
+                                          ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(12),
+                                            borderSide: BorderSide.none,
+                                          ),
+                                        ),
+                                      ),
+                                      const SizedBox(height: 20),
+                                      TextFormField(
+                                        textAlignVertical:
+                                            TextAlignVertical.center,
+                                        decoration: InputDecoration(
+                                          hintText: 'Color',
+                                          hintStyle: TextStyle(
+                                            color: const Color(0xFF263A4D)
+                                                .withOpacity(0.5),
+                                          ),
+                                          fillColor: Colors.white,
+                                          filled: true,
+                                          border: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(12),
+                                            borderSide: BorderSide.none,
+                                          ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(12),
+                                            borderSide: BorderSide.none,
+                                          ),
+                                        ),
+                                      ),
                                     ],
                                   ),
                                 );
