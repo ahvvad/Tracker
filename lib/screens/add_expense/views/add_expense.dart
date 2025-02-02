@@ -1,8 +1,8 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
+import 'package:money_tracker/screens/add_expense/views/widgets/custom_alert_dialog.dart';
+import 'package:money_tracker/screens/add_expense/views/widgets/custom_expense_botton.dart';
 
 class AddExpense extends StatefulWidget {
   const AddExpense({super.key});
@@ -108,90 +108,7 @@ class _AddExpenseState extends State<AddExpense> {
                             showDialog(
                               context: context,
                               builder: (ctx) {
-                                return AlertDialog(
-                                  title: const Text(
-                                    'Create a Gategory',
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  backgroundColor: Colors.grey.shade500,
-                                  content: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      const SizedBox(height: 20),
-                                      TextFormField(
-                                        textAlignVertical:
-                                            TextAlignVertical.center,
-                                        decoration: InputDecoration(
-                                          hintText: 'Name',
-                                          hintStyle: TextStyle(
-                                            color: const Color(0xFF263A4D)
-                                                .withOpacity(0.5),
-                                          ),
-                                          fillColor: Colors.white,
-                                          filled: true,
-                                          border: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(12),
-                                            borderSide: BorderSide.none,
-                                          ),
-                                          enabledBorder: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(12),
-                                            borderSide: BorderSide.none,
-                                          ),
-                                        ),
-                                      ),
-                                      const SizedBox(height: 20),
-                                      TextFormField(
-                                        textAlignVertical:
-                                            TextAlignVertical.center,
-                                        decoration: InputDecoration(
-                                          hintText: 'Icon',
-                                          hintStyle: TextStyle(
-                                            color: const Color(0xFF263A4D)
-                                                .withOpacity(0.5),
-                                          ),
-                                          fillColor: Colors.white,
-                                          filled: true,
-                                          border: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(12),
-                                            borderSide: BorderSide.none,
-                                          ),
-                                          enabledBorder: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(12),
-                                            borderSide: BorderSide.none,
-                                          ),
-                                        ),
-                                      ),
-                                      const SizedBox(height: 20),
-                                      TextFormField(
-                                        textAlignVertical:
-                                            TextAlignVertical.center,
-                                        decoration: InputDecoration(
-                                          hintText: 'Color',
-                                          hintStyle: TextStyle(
-                                            color: const Color(0xFF263A4D)
-                                                .withOpacity(0.5),
-                                          ),
-                                          fillColor: Colors.white,
-                                          filled: true,
-                                          border: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(12),
-                                            borderSide: BorderSide.none,
-                                          ),
-                                          enabledBorder: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(12),
-                                            borderSide: BorderSide.none,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                );
+                                return const customAlertDialog();
                               },
                             );
                           },
@@ -265,44 +182,7 @@ class _AddExpenseState extends State<AddExpense> {
                 ),
                 const Spacer(),
                 const SizedBox(height: 16),
-                Container(
-                  width: double.infinity,
-                  height: kToolbarHeight,
-                  decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        blurRadius: 40,
-                        color: Colors.grey.shade400,
-                        offset: const Offset(0, 15),
-                      )
-                    ],
-                    gradient: LinearGradient(
-                      colors: [
-                        Theme.of(context).colorScheme.primary,
-                        Theme.of(context).colorScheme.secondary,
-                        Theme.of(context).colorScheme.tertiary,
-                      ],
-                      transform: const GradientRotation(pi / 5),
-                    ),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: TextButton(
-                    style: TextButton.styleFrom(
-                      backgroundColor: Colors.transparent,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                    ),
-                    onPressed: () {},
-                    child: const Text(
-                      'SAVE',
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
+                const customExpenseBotton(),
               ],
             ),
           ),
