@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomAlertDialog extends StatefulWidget {
@@ -30,7 +31,8 @@ class _CustomAlertDialogState extends State<CustomAlertDialog> {
           context: context,
           builder: (ctx) {
             bool isExpanded = false;
-
+            String iconSelected = '';
+            Color categoryColor = Colors.white;
             return StatefulBuilder(
               builder: (context, setState) {
                 return AlertDialog(
@@ -133,23 +135,87 @@ class _CustomAlertDialogState extends State<CustomAlertDialog> {
                                 ),
                                 itemCount: categoryIcons.length,
                                 itemBuilder: (context, int i) {
-                                  return Container(
-                                    width: 50,
-                                    height: 50,
-                                    decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                        image: AssetImage(
-                                          'assets/images/${categoryIcons[i]}.png',
+                                  return GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        iconSelected = categoryIcons[i];
+                                      });
+                                    },
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(2.5),
+                                      child: Container(
+                                        width: 50,
+                                        height: 50,
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                            width: 3,
+                                            color:
+                                                iconSelected == categoryIcons[i]
+                                                    ? Colors.green
+                                                    : Colors.grey,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(12),
+                                          image: DecorationImage(
+                                            image: AssetImage(
+                                              'assets/images/${categoryIcons[i]}.png',
+                                            ),
+                                          ),
                                         ),
                                       ),
                                     ),
                                   );
                                 },
                               )
-                            : null,
+                            : const SizedBox.shrink(),
                       ),
                       const SizedBox(height: 20),
                       TextFormField(
+                        onTap: () {
+                          showDialog(
+                            context: context,
+                            builder: (ctx2) {
+                              return AlertDialog(
+                                content: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    ColorPicker(
+                                      pickerColor: Colors.blue,
+                                      onColorChanged: (value) {
+                                        setState(() {
+                                          categoryColor = value;
+                                        });
+                                      },
+                                    ),
+                                    SizedBox(
+                                      width: double.infinity,
+                                      height: 50,
+                                      child: TextButton(
+                                        style: TextButton.styleFrom(
+                                          backgroundColor: Colors.blue,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(8),
+                                          ),
+                                        ),
+                                        onPressed: () {
+                                          Navigator.of(ctx2).pop();
+                                        },
+                                        child: const Text(
+                                          'SAVE',
+                                          style: TextStyle(
+                                            fontSize: 20,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                          );
+                        },
                         textAlignVertical: TextAlignVertical.center,
                         readOnly: true,
                         decoration: InputDecoration(
@@ -158,7 +224,7 @@ class _CustomAlertDialogState extends State<CustomAlertDialog> {
                           hintStyle: TextStyle(
                             color: const Color(0xFF263A4D).withOpacity(0.5),
                           ),
-                          fillColor: Colors.white,
+                          fillColor: categoryColor,
                           filled: true,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
@@ -167,6 +233,29 @@ class _CustomAlertDialogState extends State<CustomAlertDialog> {
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                             borderSide: BorderSide.none,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                      SizedBox(
+                        width: double.infinity,
+                        height: 50,
+                        child: TextButton(
+                          style: TextButton.styleFrom(
+                            backgroundColor: Colors.black,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                          ),
+                          onPressed: () {
+                            Navigator.of(ctx).pop();
+                          },
+                          child: const Text(
+                            'SAVE',
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),
