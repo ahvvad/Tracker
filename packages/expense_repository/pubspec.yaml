@@ -1,5 +1,5 @@
-name: expense_tracker
-description: "to handles expenses"
+name: expense_repository
+description: A repository for managing expenses
 publish_to: "none"
 
 version: 1.0.0+1
@@ -22,7 +22,3 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
-  # assets:
-  #   - assets/images/person.png
-  #   - assets/images/
