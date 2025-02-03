@@ -180,7 +180,7 @@ class _CustomAlertDialogState extends State<CustomAlertDialog> {
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     ColorPicker(
-                                      pickerColor: Colors.blue,
+                                      pickerColor: Colors.white,
                                       onColorChanged: (value) {
                                         setState(() {
                                           categoryColor = value;
@@ -248,6 +248,7 @@ class _CustomAlertDialogState extends State<CustomAlertDialog> {
                             ),
                           ),
                           onPressed: () {
+                            // Create Category Object
                             Navigator.of(ctx).pop();
                           },
                           child: const Text(
