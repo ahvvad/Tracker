@@ -22,7 +22,7 @@ class _CustomAlertDialogState extends State<CustomAlertDialog> {
     'shopping',
     'travel'
   ];
-
+  
   @override
   Widget build(BuildContext context) {
     return IconButton(
