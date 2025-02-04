@@ -23,6 +23,7 @@ dependencies:
   
   expense_repository:
     path: packages/expense_repository
+  uuid: ^4.5.1
 
 dev_dependencies:
   flutter_test:

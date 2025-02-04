@@ -1,7 +1,10 @@
 import 'dart:math';
 
+import 'package:expense_repository/expense_repository.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:money_tracker/screens/add_expense/blocs/create_category_bloc/create_category_bloc.dart';
 import 'package:money_tracker/screens/add_expense/views/add_expense.dart';
 import 'package:money_tracker/screens/home/views/main_screen.dart';
 import 'package:money_tracker/screens/stats/stats.dart';
@@ -58,7 +61,10 @@ class _HomeScreenState extends State<HomeScreen> {
             context,
             PageRouteBuilder(
               pageBuilder: (context, animation, secondaryAnimation) =>
-                  const AddExpense(),
+                  BlocProvider(
+                create: (context) => CreateCategoryBloc(FirebaseExpenseRepo()),
+                child: const AddExpense(),
+              ),
               transitionsBuilder:
                   (context, animation, secondaryAnimation, child) {
                 return FadeTransition(
