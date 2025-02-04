@@ -114,9 +114,40 @@ class _AddExpenseState extends State<AddExpense> {
                           borderRadius: BorderRadius.circular(12),
                           borderSide: BorderSide.none,
                         ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12),
+                        enabledBorder: const OutlineInputBorder(
+                          borderRadius:
+                              BorderRadius.vertical(top: Radius.circular(12)),
                           borderSide: BorderSide.none,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      height: 200,
+                      width: MediaQuery.of(context).size.width,
+                      decoration: const BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.vertical(
+                          bottom: Radius.circular(12),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ListView.builder(
+                          itemCount: 4,
+                          itemBuilder: (context, int i) {
+                            return Card(
+                              child: ListTile(
+                                leading: Image.asset(
+                                  'assets/images/pet.png',
+                                  scale: 2,
+                                ),
+                                title: const Text('Pet'),
+                                tileColor: Colors.teal,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8)),
+                              ),
+                            );
+                          },
                         ),
                       ),
                     ),
