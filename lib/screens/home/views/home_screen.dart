@@ -70,7 +70,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   BlocProvider(
-                    create: (context) => GetCategoriesBloc(FirebaseExpenseRepo()),
+                    create: (context) =>
+                        GetCategoriesBloc(FirebaseExpenseRepo())
+                          ..add(
+                            GetCategories(),
+                          ),
                   ),
                 ],
                 child: const AddExpense(),

@@ -10,6 +10,7 @@ class TransactionsItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.builder(
+        // physics: const NeverScrollableScrollPhysics(),
         itemCount: transactionsData.length,
         itemBuilder: (context, int i) {
           return Padding(

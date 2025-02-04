@@ -52,7 +52,7 @@ class _CustomAlertDialogState extends State<CustomAlertDialog> {
                     Navigator.pop(ctx);
                   } else if (state is CreateCategoryLoading) {
                     setState(() {
-                      isLoading == true;
+                      isLoading = true;
                     });
                   }
                 },
@@ -67,7 +67,7 @@ class _CustomAlertDialogState extends State<CustomAlertDialog> {
                       content: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          const SizedBox(height: 20),
+                          const SizedBox(height: 15),
                           TextFormField(
                             controller: categoryNameConteoller,
                             textAlignVertical: TextAlignVertical.center,
@@ -89,7 +89,7 @@ class _CustomAlertDialogState extends State<CustomAlertDialog> {
                               ),
                             ),
                           ),
-                          const SizedBox(height: 20),
+                          const SizedBox(height: 15),
                           TextFormField(
                             controller: categoryIconConteoller,
                             onTap: () {
@@ -195,7 +195,7 @@ class _CustomAlertDialogState extends State<CustomAlertDialog> {
                                   )
                                 : const SizedBox.shrink(),
                           ),
-                          const SizedBox(height: 20),
+                          const SizedBox(height: 15),
                           TextFormField(
                             controller: categoryColorConteoller,
                             onTap: () {
@@ -263,7 +263,7 @@ class _CustomAlertDialogState extends State<CustomAlertDialog> {
                               ),
                             ),
                           ),
-                          const SizedBox(height: 20),
+                          const SizedBox(height: 15),
                           SizedBox(
                             width: double.infinity,
                             height: 50,
@@ -280,11 +280,10 @@ class _CustomAlertDialogState extends State<CustomAlertDialog> {
                                 category.categoryId = const Uuid().v1();
                                 category.name = categoryNameConteoller.text;
                                 category.icon = iconSelected;
-                                category.color = categoryColor.toString();
+                                category.color = categoryColor.value;
                                 context
                                     .read<CreateCategoryBloc>()
                                     .add(CreateCategory(category));
-                                // Navigator.of(ctx).pop();
                               },
                               child: isLoading == true
                                   ? const Center(

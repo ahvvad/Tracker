@@ -1,10 +1,10 @@
 class CategoryEntity {
-  late String categoryId;
-  late String name;
-  late int totalExpenses;
-  late String icon;
-  late String color;
-  
+  String categoryId;
+  String name;
+  int totalExpenses;
+  String icon;
+  int color;
+
   CategoryEntity({
     required this.categoryId,
     required this.name,
