@@ -1,16 +1,21 @@
-# money_tracker
+# Expense Tracker
 
-A new Flutter project.
+[![Dribbble Design](assets/preview/preview.png)](https://dribbble.com/shots/15560984-Daily-Expense-Tracker)
 
-## Getting Started
+### Releases
 
-This project is a starting point for a Flutter application.
+You can find the application in the **Releases** section or by [following this link](#).
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Notes
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The backend is in the external `packages` folder using `Modular Architecture` for better structure
+
+`Dribbble Design` : [Here](https://dribbble.com/shots/15560984-Daily-Expense-Tracker)
+
+---
+
+### Explore the UI through [this link](assets/preview)
+
+#### **Contact me anytime if you have questions.** : [Here](https://linktr.ee/userahmed)
