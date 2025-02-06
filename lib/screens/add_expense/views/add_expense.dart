@@ -18,8 +18,8 @@ class _AddExpenseState extends State<AddExpense> {
   TextEditingController expenseConteoller = TextEditingController();
   TextEditingController categoryConteoller = TextEditingController();
   TextEditingController dateConteoller = TextEditingController();
-  DateTime selectedDate = DateTime.now();
-  late Expense expense ;
+  // DateTime selectedDate = DateTime.now();
+  late Expense expense;
 
   @override
   void initState() {
@@ -108,29 +108,40 @@ class _AddExpenseState extends State<AddExpense> {
                             //
                           },
                           decoration: InputDecoration(
-                            prefixIcon: Icon(
-                              FontAwesomeIcons.list,
-                              color: const Color(0xFF263A4D).withOpacity(0.5),
-                              size: 16,
-                            ),
+                            prefixIcon: expense.category == Category.empty
+                                ? Icon(
+                                    FontAwesomeIcons.list,
+                                    color: const Color(0xFF263A4D)
+                                        .withOpacity(0.5),
+                                    size: 16,
+                                  )
+                                : Image.asset(
+                                    'assets/images/${expense.category.icon}.png',
+                                    scale: 2,
+                                  ),
                             suffixIcon: IconButton(
-                                onPressed: () async {
-                                  var newCategory =
-                                      await getCategoryCreation(context);
-                                  setState(() {
-                                    state.categories.insert(0, newCategory);
-                                  });
-                                },
-                                icon: const Icon(
-                                  FontAwesomeIcons.plus,
-                                  size: 16,
-                                  color: Colors.grey,
-                                )),
+                              onPressed: () async {
+                                var newCategory =
+                                    await getCategoryCreation(context);
+                                setState(() {
+                                  state.categories.insert(0, newCategory);
+                                });
+                              },
+                              icon: Icon(
+                                FontAwesomeIcons.plus,
+                                size: 16,
+                                color: expense.category == Category.empty
+                                    ? Colors.grey
+                                    : Colors.black,
+                              ),
+                            ),
                             hintText: 'Category',
                             hintStyle: TextStyle(
                               color: const Color(0xFF263A4D).withOpacity(0.5),
                             ),
-                            fillColor: Colors.white,
+                            fillColor: expense.category == Category.empty
+                                ? Colors.white
+                                : Color(expense.category.color),
                             filled: true,
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(12),
@@ -159,6 +170,13 @@ class _AddExpenseState extends State<AddExpense> {
                               itemBuilder: (context, int i) {
                                 return Card(
                                   child: ListTile(
+                                    onTap: () {
+                                      setState(() {
+                                        expense.category = state.categories[i];
+                                        categoryConteoller.text =
+                                            expense.category.name;
+                                      });
+                                    },
                                     leading: Image.asset(
                                       'assets/images/${state.categories[i].icon}.png',
                                       scale: 2,
@@ -182,7 +200,7 @@ class _AddExpenseState extends State<AddExpense> {
                           onTap: () async {
                             DateTime? newDate = await showDatePicker(
                               context: context,
-                              initialDate: selectedDate,
+                              initialDate: expense.date,
                               firstDate: DateTime.now(),
                               lastDate: DateTime.now().add(
                                 const Duration(days: 365),
@@ -192,7 +210,8 @@ class _AddExpenseState extends State<AddExpense> {
                               setState(() {
                                 dateConteoller.text =
                                     DateFormat('yMMMMd').format(newDate);
-                                selectedDate = newDate;
+                                // selectedDate = newDate;
+                                expense.date = newDate;
                               });
                             }
                           },
@@ -221,7 +240,41 @@ class _AddExpenseState extends State<AddExpense> {
                       ],
                     ),
                     const SizedBox(height: 16),
-                    const CustomExpenseBotton()
+                    Container(
+                      width: double.infinity,
+                      height: kToolbarHeight,
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                        boxShadow: [
+                          BoxShadow(
+                            blurRadius: 40,
+                            color: Colors.grey.shade400,
+                            offset: const Offset(0, 15),
+                          )
+                        ],
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: TextButton(
+                        style: TextButton.styleFrom(
+                          backgroundColor: Colors.transparent,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            expense.amount = int.parse(expenseConteoller.text);
+                          });
+                        },
+                        child: const Text(
+                          'SAVE',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    )
                   ],
                 ),
               );
