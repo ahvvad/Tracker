@@ -14,12 +14,14 @@ class StatsScreen extends StatelessWidget {
           children: [
             CustomStatsAppBar(),
             SizedBox(height: 20),
-            ChartView(),
+            Column(
+              children: [
+                ChartView(),
+              ],
+            ),
           ],
         ),
       ),
     );
   }
 }
-
-

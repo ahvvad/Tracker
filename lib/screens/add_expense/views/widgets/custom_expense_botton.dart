@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class CustomExpenseBotton extends StatelessWidget {
@@ -13,6 +11,7 @@ class CustomExpenseBotton extends StatelessWidget {
       width: double.infinity,
       height: kToolbarHeight,
       decoration: BoxDecoration(
+        color: Colors.black,
         boxShadow: [
           BoxShadow(
             blurRadius: 40,
@@ -20,14 +19,6 @@ class CustomExpenseBotton extends StatelessWidget {
             offset: const Offset(0, 15),
           )
         ],
-        gradient: LinearGradient(
-          colors: [
-            Theme.of(context).colorScheme.primary,
-            Theme.of(context).colorScheme.secondary,
-            Theme.of(context).colorScheme.tertiary,
-          ],
-          transform: const GradientRotation(pi / 5),
-        ),
         borderRadius: BorderRadius.circular(12),
       ),
       child: TextButton(
