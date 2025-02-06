@@ -51,7 +51,7 @@ class _MyChartState extends State<MyChart> with TickerProviderStateMixin {
             ],
             transform: const GradientRotation(pi / 40),
           ),
-          width: 10,
+          width: 7,
           backDrawRodData: BackgroundBarChartRodData(
             show: true,
             toY: 5,
@@ -105,7 +105,7 @@ class _MyChartState extends State<MyChart> with TickerProviderStateMixin {
         leftTitles: AxisTitles(
           sideTitles: SideTitles(
             showTitles: true,
-            reservedSize: 38,
+            reservedSize: 32,
             getTitlesWidget: leftTitles,
           ),
         ),

@@ -5,7 +5,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:money_tracker/screens/add_expense/blocs/get_categories_bloc/get_categories_bloc.dart';
 import 'package:money_tracker/screens/add_expense/views/widgets/category_creation.dart';
-import 'package:money_tracker/screens/add_expense/views/widgets/custom_expense_botton.dart';
 
 class AddExpense extends StatefulWidget {
   const AddExpense({super.key});

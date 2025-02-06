@@ -9,18 +9,13 @@ class ChartView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(
-        right: 20.0,
-        left: 20.0,
-        top: 20.0,
-        bottom: 10,
-      ),
+      padding: const EdgeInsets.all(10.0),
       width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.width,
+      height: 250,
       decoration: const BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.all(
-          Radius.circular(20),
+        borderRadius: BorderRadius.vertical(
+          bottom: Radius.circular(12),
         ),
       ),
       child: const MyChart(),
