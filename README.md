@@ -4,7 +4,7 @@
 
 ### Releases
 
-You can find the application in the **Releases** section or by [following this link](#).
+You can find the application in the **Releases** section or by [following this link](https://github.com/ahvvad/Tracker/releases/tag/1.0.0).
 
 ---
 
