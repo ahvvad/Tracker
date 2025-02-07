@@ -52,7 +52,7 @@ class _ChartDetailsState extends State<ChartDetails> {
           ),
           const SizedBox(height: 10),
           const Text(
-            '\$ 4800.00',
+            '\$ 3000.00',
             style: TextStyle(
               fontSize: 35,
               fontWeight: FontWeight.bold,

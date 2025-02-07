@@ -229,10 +229,11 @@ class _AddExpenseState extends State<AddExpense> {
                                         borderRadius:
                                             BorderRadius.circular(12))),
                                 child: const Text(
-                                  'Save',
+                                  'SAVE',
                                   style: TextStyle(
                                       fontSize: 22, color: Colors.white),
-                                )),
+                                ),
+                              ),
                       )
                     ],
                   ),

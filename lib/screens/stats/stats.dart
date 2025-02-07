@@ -1,3 +1,4 @@
+import 'package:expense_repository/expense_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:money_tracker/screens/home/views/widgets/transactions_item.dart';
 import 'package:money_tracker/screens/stats/widgets/income_expenses_switch.dart';
@@ -7,29 +8,32 @@ import 'package:money_tracker/screens/stats/widgets/custom_stats_app_bar.dart';
 import 'package:money_tracker/screens/stats/widgets/stats_bar.dart';
 
 class StatsScreen extends StatelessWidget {
-  const StatsScreen({super.key});
+  final List<Expense> expenses;
+  const StatsScreen(
+    this.expenses, {
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
       child: Padding(
-        padding: EdgeInsets.only(right: 25.0, left: 25.0, top: 20.0),
+        padding: const EdgeInsets.only(right: 25.0, left: 25.0, top: 20.0),
         child: Column(
           children: [
-            CustomStatsAppBar(),
-            SizedBox(height: 20.0),
-            IncomeExpensesSwitch(),
-            SizedBox(height: 20.0),
-            ChartDetails(),
-            ChartView(),
-            SizedBox(height: 20.0),
-            StatsBar(),
-            SizedBox(height: 20.0),
-            TransactionsItem(),
+            const CustomStatsAppBar(),
+            const SizedBox(height: 20.0),
+            const IncomeExpensesSwitch(),
+            const SizedBox(height: 20.0),
+            const ChartDetails(),
+            const ChartView(),
+            const SizedBox(height: 20.0),
+            const StatsBar(),
+            const SizedBox(height: 20.0),
+            TransactionsItem(expenses: expenses)
           ],
         ),
       ),
     );
   }
 }
-
