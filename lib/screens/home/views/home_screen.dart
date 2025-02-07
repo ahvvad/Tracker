@@ -35,24 +35,29 @@ class _HomeScreenState extends State<HomeScreen> {
               borderRadius:
                   const BorderRadius.vertical(top: Radius.circular(30)),
               child: BottomNavigationBar(
-                  onTap: (value) {
-                    setState(() {
-                      index = value;
-                    });
-                  },
-                  showSelectedLabels: false,
-                  showUnselectedLabels: false,
-                  elevation: 3,
-                  items: [
-                    BottomNavigationBarItem(
-                        icon: Icon(CupertinoIcons.home,
-                            color: index == 0 ? selectedItem : unselectedItem),
-                        label: 'Home'),
-                    BottomNavigationBarItem(
-                        icon: Icon(CupertinoIcons.graph_square_fill,
-                            color: index == 1 ? selectedItem : unselectedItem),
-                        label: 'Stats')
-                  ]),
+                currentIndex: index,
+                onTap: (value) {
+                  setState(() {
+                    index = value;
+                  });
+                },
+                backgroundColor: Colors.white,
+                showUnselectedLabels: false,
+                showSelectedLabels: false,
+                elevation: 3,
+                selectedItemColor: Colors.blue,
+                unselectedItemColor: Colors.grey,
+                items: const [
+                  BottomNavigationBarItem(
+                    icon: Icon(CupertinoIcons.home),
+                    label: 'Home',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(CupertinoIcons.graph_square_fill),
+                    label: 'Stats',
+                  )
+                ],
+              ),
             ),
             floatingActionButtonLocation:
                 FloatingActionButtonLocation.centerDocked,

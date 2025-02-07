@@ -1,11 +1,11 @@
 import 'package:expense_repository/expense_repository.dart';
 import 'package:flutter/material.dart';
-import 'package:money_tracker/screens/home/views/widgets/transactions_item.dart';
 import 'package:money_tracker/screens/stats/widgets/income_expenses_switch.dart';
 import 'package:money_tracker/screens/stats/widgets/chart_details.dart';
 import 'package:money_tracker/screens/stats/widgets/chart_view.dart';
 import 'package:money_tracker/screens/stats/widgets/custom_stats_app_bar.dart';
 import 'package:money_tracker/screens/stats/widgets/stats_bar.dart';
+import 'package:money_tracker/screens/stats/widgets/stats_tranctions_item.dart';
 
 class StatsScreen extends StatelessWidget {
   final List<Expense> expenses;
@@ -30,7 +30,7 @@ class StatsScreen extends StatelessWidget {
             const SizedBox(height: 20.0),
             const StatsBar(),
             const SizedBox(height: 20.0),
-            TransactionsItem(expenses: expenses)
+            StatsTranctionsItem(expenses: expenses)
           ],
         ),
       ),

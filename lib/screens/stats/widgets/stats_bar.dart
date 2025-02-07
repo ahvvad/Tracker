@@ -57,7 +57,7 @@ class _StatsState extends State<StatsBar> {
         GestureDetector(
           onTap: () {},
           child: Text(
-            'View All',
+            'Total Expenses',
             style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w600,
