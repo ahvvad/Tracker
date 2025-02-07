@@ -9,7 +9,7 @@ class IncomeExpensesSwitch extends StatefulWidget {
 }
 
 class _IncomeExpensesSwitchState extends State<IncomeExpensesSwitch> {
-  bool isIncomeSelected = true;
+  bool isIncomeSelected = false;
   double height = 60;
 
   @override

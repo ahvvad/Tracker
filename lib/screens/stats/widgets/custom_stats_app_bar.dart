@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:money_tracker/screens/home/views/home_screen.dart';
+// import 'package:money_tracker/screens/home/views/home_screen.dart';
 
 class CustomStatsAppBar extends StatelessWidget {
   const CustomStatsAppBar({
@@ -25,20 +25,20 @@ class CustomStatsAppBar extends StatelessWidget {
                 ),
                 child: IconButton(
                   onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      PageRouteBuilder(
-                        pageBuilder: (context, animation, secondaryAnimation) =>
-                            const HomeScreen(),
-                        transitionsBuilder:
-                            (context, animation, secondaryAnimation, child) {
-                          return FadeTransition(
-                            opacity: animation,
-                            child: child,
-                          );
-                        },
-                      ),
-                    );
+                    // Navigator.pushReplacement(
+                    //   context,
+                    //   PageRouteBuilder(
+                    //     pageBuilder: (context, animation, secondaryAnimation) =>
+                    //         const HomeScreen(),
+                    //     transitionsBuilder:
+                    //         (context, animation, secondaryAnimation, child) {
+                    //       return FadeTransition(
+                    //         opacity: animation,
+                    //         child: child,
+                    //       );
+                    //     },
+                    //   ),
+                    // );
                   },
                   icon: const Icon(
                     CupertinoIcons.arrow_left_circle_fill,

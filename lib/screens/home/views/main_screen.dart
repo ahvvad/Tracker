@@ -13,9 +13,12 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 10),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 25.0,
+        ),
         child: Column(
           children: [
+            const SizedBox(height: 20),
             const CustomAppBar(),
             const SizedBox(height: 20),
             const HomeCard(),

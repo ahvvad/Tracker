@@ -1,6 +1,6 @@
 import 'package:expense_repository/expense_repository.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+// import 'package:intl/intl.dart';
 
 class StatsTranctionsItem extends StatelessWidget {
   const StatsTranctionsItem({
@@ -49,7 +49,7 @@ class StatsTranctionsItem extends StatelessWidget {
                         Text(
                           expenses[i].category.name,
                           style: TextStyle(
-                              fontSize: 14,
+                              fontSize: 18,
                               color: Theme.of(context).colorScheme.onSurface,
                               fontWeight: FontWeight.w500),
                         ),
@@ -65,13 +65,13 @@ class StatsTranctionsItem extends StatelessWidget {
                               color: Theme.of(context).colorScheme.onSurface,
                               fontWeight: FontWeight.w400),
                         ),
-                        Text(
-                          DateFormat('dd/MM/yyyy').format(expenses[i].date),
-                          style: TextStyle(
-                              fontSize: 14,
-                              color: Theme.of(context).colorScheme.outline,
-                              fontWeight: FontWeight.w400),
-                        ),
+                        // Text(
+                        //   DateFormat('dd/MM/yyyy').format(expenses[i].date),
+                        //   style: TextStyle(
+                        //       fontSize: 14,
+                        //       color: Theme.of(context).colorScheme.outline,
+                        //       fontWeight: FontWeight.w400),
+                        // ),
                       ],
                     )
                   ],

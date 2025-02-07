@@ -26,7 +26,7 @@ class _AddExpenseState extends State<AddExpense> {
 
   @override
   void initState() {
-    dateController.text = DateFormat('dd/MM/yyyy').format(DateTime.now());
+    dateController.text = DateFormat('yMMMMd').format(DateTime.now());
     expense = Expense.empty;
     expense.expenseId = const Uuid().v1();
     super.initState();
@@ -49,7 +49,13 @@ class _AddExpenseState extends State<AddExpense> {
         child: Scaffold(
           backgroundColor: Theme.of(context).colorScheme.surface,
           appBar: AppBar(
-            backgroundColor: Theme.of(context).colorScheme.surface,
+            elevation: 0,
+            leading: IconButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: const Icon(Icons.arrow_back_ios_new_rounded),
+            ),
           ),
           body: BlocBuilder<GetCategoriesBloc, GetCategoriesState>(
             builder: (context, state) {
@@ -114,7 +120,8 @@ class _AddExpenseState extends State<AddExpense> {
                                 var newCategory =
                                     await getCategoryCreation(context);
                                 setState(() {
-                                  state.categories.insert(0, newCategory);
+                                  state.categories
+                                      .insert(0, newCategory ?? Category.empty);
                                 });
                               },
                               icon: const Icon(
@@ -184,7 +191,7 @@ class _AddExpenseState extends State<AddExpense> {
                           if (newDate != null) {
                             setState(() {
                               dateController.text =
-                                  DateFormat('dd/MM/yyyy').format(newDate);
+                                  DateFormat('yMMMMd').format(newDate);
                               // selectDate = newDate;
                               expense.date = newDate;
                             });
